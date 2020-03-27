@@ -4,32 +4,38 @@ import javax.activation.MimetypesFileTypeMap;
 
 ArrayList<Creator> creators = new ArrayList<Creator>();
 ArrayList<Tag> tagList = new ArrayList<Tag>();
-ArrayList<Task> taskList = new ArrayList<Task>();
+ArrayList<Sentence> sentenceList = new ArrayList<Sentence>();
+
 //ArrayList<Object> database = new ArrayList<Object>();
 //HashMap<String,DatabaseElement> db = new HashMap<String,DatabaseElement>();
 ArrayList<DatabaseElement> database = new ArrayList<DatabaseElement>();
-int CurrentTaskNo = 0;
 
 Creator orhan, bager;
 void setup() {
   database.add(new DatabaseElement("dream", "dream.txt"));
   addCreators();
   addRandomTagsToCreators();
-  createTaskList();
+  createsentenceList();
+  int CurrentSentenceNo = 0;
+  int CurrentTaskNo = 0;
   
-  while (CurrentTaskNo < taskList.size()){
-  task_tag();
-  task_setConsensus();
-  if (task_executeConsensus()){
-    CurrentTaskNo++;
-  }else
-  {
-    taskList.get(CurrentTaskNo).tags = new IntList();
-    taskList.get(CurrentTaskNo).consensus = -1;
+  for (Sentence s : sentenceList) {
+    createTaskList(s);
+    //sentence execution should have a return value, for if goto
   }
+
+//  while (CurrentTaskNo < sentenceList.size()){
+//    task_tag();
+//    task_setConsensus();
+//    if (task_executeConsensus()){
+//      CurrentTaskNo++;
+//    }else
+//    {
+//      sentenceList.get(CurrentTaskNo).tags = new IntList();
+//      sentenceList.get(CurrentTaskNo).consensus = -1;
+//    }
+//  }
   
-    
-  }
 }
 
 void addCreators() {  
@@ -65,4 +71,16 @@ void addRandomTagsToCreators() {
     }
     println("");
   }
+}
+
+void createsentenceList() {
+  sentenceList.add(new Sentence("Artist's Name", "Find a name for the artist"));
+  sentenceList.add(new Sentence("Artwork Idea", "Find an idea for the artwork"));
+  sentenceList.add(new Sentence("Approval", "Ask for approval from the curaters if not accepted go back to idea creation"));
+  sentenceList.add(new Sentence("Artwork Production", "Produce the artwork"));
+  sentenceList.add(new Sentence("Artworks Name", "Find a name for the artwork "));
+  sentenceList.add(new Sentence("Write Description", "Write description for the artwork"));
+  sentenceList.add(new Sentence("Documentation", "Documentate the artwork"));
+  sentenceList.add(new Sentence("Send documentation", "Send the documentation to curators"));
+  sentenceList.add(new Sentence("Send the artwork", "Send the artwork to a suitable location for the curators"));
 }

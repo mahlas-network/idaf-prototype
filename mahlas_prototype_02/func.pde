@@ -1,24 +1,22 @@
 void addOpenTask() {
 }
 
-void createTaskList(){
-taskList.add(new Task(10,"Find a name for the artist"));
-taskList.add(new Task(20,"IDEA : Find an idea for the artwork"));
-taskList.add(new Task(30,"Ask for approval from the curaters"));
-taskList.add(new Task(40,"If curators did not approve GOTO 20"));
-taskList.add(new Task(50,"Produce the artwork"));
-taskList.add(new Task(60,"Find a name for the artwork "));
-taskList.add(new Task(70,"Write description for the artwork"));
-taskList.add(new Task(80,"Documentate the artwork"));
-taskList.add(new Task(90,"Send the documentation to curators"));
-taskList.add(new Task(100,"Send the artwork to a suitable location for the curators"));
+
+
+Task task_tag(Task source) {
+  Task target = new Task(1, "");
+  return target;
 }
 
-void task_tag() {
-  
+Task task_writeDesc(Task source) {
+  Task target = new Task(1, "");
+  return target;
 }
 
-void task_setConsensus() {
+
+Task task_setConsensus(Task source) {
+  Task target = new Task(1, "");
+  return target;
 }
 
 boolean task_executeConsensus() {
