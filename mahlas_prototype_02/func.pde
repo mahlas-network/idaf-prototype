@@ -3,19 +3,19 @@ void addOpenTask() {
 
 
 
-Task task_tag(Task source) {
-  Task target = new Task(1, "");
+Task task_tag(Task t) {
+  Task target = new Task(t);
   return target;
 }
 
 Task task_writeDesc(Task source) {
-  Task target = new Task(1, "");
+  Task target = new Task(1, "", 0);
   return target;
 }
 
 
 Task task_setConsensus(Task source) {
-  Task target = new Task(1, "");
+  Task target = new Task(1, "", 0);
   return target;
 }
 

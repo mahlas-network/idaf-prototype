@@ -66,7 +66,8 @@ class Tag {
 
 class Task {
   int id;
-  String text;
+  String name;
+  String description;
   /*
    1 open
    2 assigned
@@ -79,12 +80,15 @@ class Task {
   int consensus;
   IntList tags = new IntList();
 
-  Task(int _id, String _text) {
-    id = _id;
-    text = _text;
-    status = 1;
-    consensus = -1;
-  }
+  Task(int _id, String _name, String _description, int _consensus) {
+
+    id = _id ;
+    name = _name ;
+    description = _description ;
+    consensus = _consensus ;
+    status = 1 ;
+
+}
 }
 
 class Sentence {
@@ -95,6 +99,12 @@ class Sentence {
   Sentence(String _name, String _description) {
     name = _name ;
     description = _description ;
+  }
+
+  void createTaskList() {
+    int defaultConsensus = 0;
+    taskList.add(task_tag(name, description, defaultConsensus));
+    taskList.add(task_tag(name, description, defaultConsensus));
   }
 
   void atomize() {
