@@ -1,5 +1,4 @@
 // https://github.com/mahlas-network/docs/blob/master/parts/idaf/prototype.md
-
 import javax.activation.MimetypesFileTypeMap;
 
 ArrayList<Creator> creators = new ArrayList<Creator>();
